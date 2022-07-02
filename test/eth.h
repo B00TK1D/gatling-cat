@@ -6,15 +6,15 @@
 typedef struct eth_header {
     uint8_t dst[6];
     uint8_t src[6];
-    uint8_t type[2];
+    uint16_t type;
 } eth_header;
 
-#define ETH_TYPE_IP {0x08, 0x00}
-#define ETH_TYPE_ARP {0x08, 0x06}
+#define ETH_TYPE_IP 0x08
+#define ETH_TYPE_ARP 0x0806
 
 #define ETH_HEADER_SIZE sizeof(eth_header)
 #define ETH_PACKET  (struct packet) {.data = malloc(ETH_HEADER_SIZE), .size = ETH_HEADER_SIZE, .child = NULL}
-#define ETH_DEFAULT_HEADER (eth_header) {.dst = 0x000000000000, .src = 0x000000000000, .type = ETH_TYPE_IP}
+#define ETH_DEFAULT_HEADER (eth_header) {.dst = 0, .src = 0, .type = ETH_TYPE_IP}
 #define ETH_INIT (void*) &ETH_DEFAULT_HEADER, ETH_HEADER_SIZE
 #define ETH_HEADER(p) ((eth_header*) p->data)
 

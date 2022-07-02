@@ -5,7 +5,7 @@
 
 typedef struct packet {
     void* data;
-    int size;
+    uint16_t size;
     struct packet* child;
 } packet;
 

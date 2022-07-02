@@ -31,6 +31,9 @@
         "atomic": "cpp",
         "cstring": "cpp",
         "memory": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "unistd.h": "c",
+        "ip.h": "c",
+        "functional": "c"
     }
 }

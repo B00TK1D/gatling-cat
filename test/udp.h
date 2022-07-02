@@ -5,10 +5,10 @@
 
 
 typedef struct udp_header {
-    uint8_t src_port[2];
-    uint8_t dst_port[2];
-    uint8_t len[2];
-    uint8_t checksum[2];
+    uint16_t src_port;
+    uint16_t dst_port;
+    uint16_t len;
+    uint16_t checksum;
 } udp_header;
 
 #define UDP_HEADER_SIZE sizeof(udp_header)
